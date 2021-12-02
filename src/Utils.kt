@@ -12,6 +12,5 @@ fun readInput(name: String) = File("src", "$name.txt").readLines()
  */
 fun String.md5(): String = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteArray())).toString(16)
 
-
 fun List<Int>.countIncreases(window: Int = 1): Int = this.windowed(window) { it.sum() }
     .zipWithNext().count { (prev, next) -> next > prev }
